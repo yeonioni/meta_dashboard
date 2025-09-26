@@ -133,6 +133,11 @@ Error: Invalid access token
 - 1시간마다 실행 시 월 약 1,500분 사용
 - Private Repository도 무료 한도 내에서 사용 가능
 
+### 최신 버전 사용
+- **actions/checkout@v4**: 최신 코드 체크아웃
+- **actions/setup-python@v5**: 최신 Python 환경 설정
+- **actions/upload-artifact@v4**: 최신 아티팩트 업로드 (v3는 2025년 1월 30일부터 사용 중단)
+
 ## 🎯 다음 단계
 
 1. **알림 설정**: Slack이나 Discord 웹훅 추가
