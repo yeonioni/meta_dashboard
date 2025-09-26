@@ -1,0 +1,9 @@
+# Meta Marketing API 설정
+META_APP_ID=your_meta_app_id
+META_APP_SECRET=your_meta_app_secret
+META_ACCESS_TOKEN=your_meta_access_token
+META_AD_ACCOUNT_ID=act_your_ad_account_id
+
+# Google Sheets API 설정
+GOOGLE_CREDENTIALS_PATH=path/to/your/credentials.json
+GOOGLE_SHEET_ID=your_google_sheet_id 

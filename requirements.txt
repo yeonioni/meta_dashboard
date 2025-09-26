@@ -1,0 +1,16 @@
+setuptools>=69.0.0
+wheel>=0.42.0
+facebook-business>=20.0.0
+google-auth>=2.29.0
+google-auth-oauthlib>=1.2.0
+google-auth-httplib2>=0.2.0
+google-api-python-client>=2.130.0
+gspread>=6.1.0
+pandas>=2.2.0
+numpy>=1.26.0
+streamlit>=1.35.0
+plotly>=5.22.0
+python-dotenv>=1.0.1
+requests>=2.32.0
+schedule>=1.2.2
+openpyxl>=3.1.5 
