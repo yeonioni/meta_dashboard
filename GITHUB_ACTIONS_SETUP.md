@@ -30,7 +30,7 @@ GitHub Repository → Settings → Secrets and variables → Actions → New rep
 
 #### 📊 Google Sheets Secrets
 - **GOOGLE_SHEET_ID**: Google 스프레드시트 ID
-- **GOOGLE_SERVICE_ACCOUNT_KEY**: Google 서비스 계정 JSON 키 (전체 내용)
+- **GOOGLE_SERVICE_ACCOUNT_KEY**: Google 서비스 계정 JSON 키 (전체 내용을 한 줄로)
 
 ### 3. Google 서비스 계정 키 설정
 
@@ -39,21 +39,14 @@ GitHub Repository → Settings → Secrets and variables → Actions → New rep
 3. 서비스 계정 키 다운로드 (JSON 파일)
 4. JSON 파일 전체 내용을 `GOOGLE_SERVICE_ACCOUNT_KEY` Secret에 추가
 
+⚠️ **중요**: JSON 파일의 전체 내용을 **한 줄로** 복사해서 Secret에 추가해야 합니다.
+
 예시:
 ```json
-{
-  "type": "service_account",
-  "project_id": "your-project-id",
-  "private_key_id": "...",
-  "private_key": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n",
-  "client_email": "your-service-account@your-project.iam.gserviceaccount.com",
-  "client_id": "...",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "..."
-}
+{"type": "service_account", "project_id": "your-project-id", "private_key_id": "...", "private_key": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n", "client_email": "your-service-account@your-project.iam.gserviceaccount.com", "client_id": "...", "auth_uri": "https://accounts.google.com/o/oauth2/auth", "token_uri": "https://oauth2.googleapis.com/token", "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs", "client_x509_cert_url": "..."}
 ```
+
+💡 **팁**: JSON 파일을 텍스트 에디터로 열어서 모든 줄바꿈을 제거하고 한 줄로 만든 후 복사하세요.
 
 ### 4. 스프레드시트 권한 설정
 

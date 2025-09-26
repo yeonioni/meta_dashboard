@@ -43,10 +43,7 @@ jobs:
         echo "META_ACCESS_TOKEN=${{ secrets.META_ACCESS_TOKEN }}" >> .env
         echo "META_AD_ACCOUNT_ID=${{ secrets.META_AD_ACCOUNT_ID }}" >> .env
         echo "GOOGLE_SHEET_ID=${{ secrets.GOOGLE_SHEET_ID }}" >> .env
-        
-    - name: Google 서비스 계정 키 설정
-      run: |
-        echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}' > google_service_account.json
+        echo "GOOGLE_SERVICE_ACCOUNT_KEY=${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}" >> .env
         
     - name: 캠페인 데이터 수집 및 업데이트
       run: |

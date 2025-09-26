@@ -1,4 +1,6 @@
 import logging
+import os
+import json
 from datetime import datetime
 from typing import Dict, List, Optional
 import pandas as pd
@@ -28,9 +30,22 @@ class SheetsManager:
                 'https://www.googleapis.com/auth/drive'
             ]
             
-            credentials = Credentials.from_service_account_file(
-                self.credentials_path, scopes=scopes
-            )
+            # 환경 변수에서 서비스 계정 키 확인 (GitHub Actions용)
+            service_account_key = os.getenv('GOOGLE_SERVICE_ACCOUNT_KEY')
+            
+            if service_account_key:
+                # 환경 변수에서 JSON 키 로드 (GitHub Actions)
+                service_account_info = json.loads(service_account_key)
+                credentials = Credentials.from_service_account_info(
+                    service_account_info, scopes=scopes
+                )
+                logger.info("환경 변수에서 Google 서비스 계정 키를 로드했습니다.")
+            else:
+                # 파일에서 키 로드 (로컬 환경)
+                credentials = Credentials.from_service_account_file(
+                    self.credentials_path, scopes=scopes
+                )
+                logger.info(f"파일에서 Google 서비스 계정 키를 로드했습니다: {self.credentials_path}")
             
             self.client = gspread.authorize(credentials)
             
